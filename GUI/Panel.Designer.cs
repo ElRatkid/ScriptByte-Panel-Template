@@ -41,12 +41,18 @@ namespace Panel_Template
             this.timeDropDown = new Siticone.UI.WinForms.SiticoneComboBox();
             this.attackBtn = new Siticone.UI.WinForms.SiticoneButton();
             this.browser = new System.Windows.Forms.WebBrowser();
+            this.pingBtn = new Siticone.UI.WinForms.SiticoneButton();
+            this.tcpPingBtn = new Siticone.UI.WinForms.SiticoneButton();
+            this.portScanBtn = new Siticone.UI.WinForms.SiticoneButton();
+            this.geoIpBtn = new Siticone.UI.WinForms.SiticoneButton();
+            this.siticoneLabel1 = new Siticone.UI.WinForms.SiticoneLabel();
             this.topPnl.SuspendLayout();
             this.SuspendLayout();
             // 
             // topPnl
             // 
             this.topPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(13)))));
+            this.topPnl.Controls.Add(this.siticoneLabel1);
             this.topPnl.Controls.Add(this.miniBtn);
             this.topPnl.Controls.Add(this.exitBtn);
             this.topPnl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(13)))));
@@ -289,12 +295,110 @@ namespace Panel_Template
             this.browser.Size = new System.Drawing.Size(20, 20);
             this.browser.TabIndex = 34;
             // 
+            // pingBtn
+            // 
+            this.pingBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.pingBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.pingBtn.BorderRadius = 4;
+            this.pingBtn.BorderThickness = 2;
+            this.pingBtn.CheckedState.Parent = this.pingBtn;
+            this.pingBtn.CustomImages.Parent = this.pingBtn;
+            this.pingBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.pingBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.pingBtn.ForeColor = System.Drawing.Color.White;
+            this.pingBtn.HoveredState.Parent = this.pingBtn;
+            this.pingBtn.Location = new System.Drawing.Point(389, 47);
+            this.pingBtn.Name = "pingBtn";
+            this.pingBtn.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.pingBtn.ShadowDecoration.Parent = this.pingBtn;
+            this.pingBtn.Size = new System.Drawing.Size(189, 37);
+            this.pingBtn.TabIndex = 35;
+            this.pingBtn.Text = "Ping";
+            this.pingBtn.Click += new System.EventHandler(this.pingBtn_Click);
+            // 
+            // tcpPingBtn
+            // 
+            this.tcpPingBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.tcpPingBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.tcpPingBtn.BorderRadius = 4;
+            this.tcpPingBtn.BorderThickness = 2;
+            this.tcpPingBtn.CheckedState.Parent = this.tcpPingBtn;
+            this.tcpPingBtn.CustomImages.Parent = this.tcpPingBtn;
+            this.tcpPingBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.tcpPingBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tcpPingBtn.ForeColor = System.Drawing.Color.White;
+            this.tcpPingBtn.HoveredState.Parent = this.tcpPingBtn;
+            this.tcpPingBtn.Location = new System.Drawing.Point(389, 89);
+            this.tcpPingBtn.Name = "tcpPingBtn";
+            this.tcpPingBtn.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.tcpPingBtn.ShadowDecoration.Parent = this.tcpPingBtn;
+            this.tcpPingBtn.Size = new System.Drawing.Size(189, 37);
+            this.tcpPingBtn.TabIndex = 36;
+            this.tcpPingBtn.Text = "TCP Ping";
+            this.tcpPingBtn.Click += new System.EventHandler(this.tcpPingBtn_Click);
+            // 
+            // portScanBtn
+            // 
+            this.portScanBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.portScanBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.portScanBtn.BorderRadius = 4;
+            this.portScanBtn.BorderThickness = 2;
+            this.portScanBtn.CheckedState.Parent = this.portScanBtn;
+            this.portScanBtn.CustomImages.Parent = this.portScanBtn;
+            this.portScanBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.portScanBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.portScanBtn.ForeColor = System.Drawing.Color.White;
+            this.portScanBtn.HoveredState.Parent = this.portScanBtn;
+            this.portScanBtn.Location = new System.Drawing.Point(584, 47);
+            this.portScanBtn.Name = "portScanBtn";
+            this.portScanBtn.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.portScanBtn.ShadowDecoration.Parent = this.portScanBtn;
+            this.portScanBtn.Size = new System.Drawing.Size(189, 37);
+            this.portScanBtn.TabIndex = 37;
+            this.portScanBtn.Text = "Port Scan";
+            this.portScanBtn.Click += new System.EventHandler(this.portScanBtn_Click);
+            // 
+            // geoIpBtn
+            // 
+            this.geoIpBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.geoIpBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.geoIpBtn.BorderRadius = 4;
+            this.geoIpBtn.BorderThickness = 2;
+            this.geoIpBtn.CheckedState.Parent = this.geoIpBtn;
+            this.geoIpBtn.CustomImages.Parent = this.geoIpBtn;
+            this.geoIpBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.geoIpBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.geoIpBtn.ForeColor = System.Drawing.Color.White;
+            this.geoIpBtn.HoveredState.Parent = this.geoIpBtn;
+            this.geoIpBtn.Location = new System.Drawing.Point(584, 90);
+            this.geoIpBtn.Name = "geoIpBtn";
+            this.geoIpBtn.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.geoIpBtn.ShadowDecoration.Parent = this.geoIpBtn;
+            this.geoIpBtn.Size = new System.Drawing.Size(189, 37);
+            this.geoIpBtn.TabIndex = 38;
+            this.geoIpBtn.Text = "Geo IP";
+            this.geoIpBtn.Click += new System.EventHandler(this.geoIpBtn_Click);
+            // 
+            // siticoneLabel1
+            // 
+            this.siticoneLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.siticoneLabel1.ForeColor = System.Drawing.Color.White;
+            this.siticoneLabel1.Location = new System.Drawing.Point(3, 0);
+            this.siticoneLabel1.Name = "siticoneLabel1";
+            this.siticoneLabel1.Size = new System.Drawing.Size(163, 18);
+            this.siticoneLabel1.TabIndex = 24;
+            this.siticoneLabel1.Text = "ScriptByte Panel Template";
+            // 
             // Panel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(25)))));
             this.ClientSize = new System.Drawing.Size(981, 552);
+            this.Controls.Add(this.geoIpBtn);
+            this.Controls.Add(this.portScanBtn);
+            this.Controls.Add(this.tcpPingBtn);
+            this.Controls.Add(this.pingBtn);
             this.Controls.Add(this.attackBtn);
             this.Controls.Add(this.timeDropDown);
             this.Controls.Add(this.methodDropDown);
@@ -309,6 +413,7 @@ namespace Panel_Template
             this.Text = "Panel";
             this.Load += new System.EventHandler(this.Panel_Load);
             this.topPnl.ResumeLayout(false);
+            this.topPnl.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -325,6 +430,11 @@ namespace Panel_Template
         private Siticone.UI.WinForms.SiticoneComboBox timeDropDown;
         public Siticone.UI.WinForms.SiticoneButton attackBtn;
         private System.Windows.Forms.WebBrowser browser;
+        public Siticone.UI.WinForms.SiticoneButton pingBtn;
+        public Siticone.UI.WinForms.SiticoneButton tcpPingBtn;
+        public Siticone.UI.WinForms.SiticoneButton portScanBtn;
+        public Siticone.UI.WinForms.SiticoneButton geoIpBtn;
+        private Siticone.UI.WinForms.SiticoneLabel siticoneLabel1;
     }
 }
 

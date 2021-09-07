@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -146,6 +148,37 @@ namespace Panel_Template
         private void CheckTime()
         {
             TimeString = timeDropDown.Text;
+        }
+
+        private void pingBtn_Click(object sender, EventArgs e)
+        {
+            string arguments = "/C ping " + this.targetTextBox.Text + " -t";
+            Process.Start("CMD.EXE", arguments);
+        }
+
+        private void tcpPingBtn_Click(object sender, EventArgs e)
+        {
+            string arguments = string.Concat(new string[]
+            {
+                "/C paping ",
+                this.targetTextBox.Text,
+                " -p ",
+                this.portTextBox.Text,
+                " "
+            });
+            Process.Start("CMD.EXE", arguments);
+        }
+
+        private void portScanBtn_Click(object sender, EventArgs e)
+        {
+            WebClient webClient = new WebClient();
+            MessageBox.Show(webClient.DownloadString("https://api.hackertarget.com/nmap/?q=" + this.targetTextBox.Text) + " ", ProductName);
+        }
+
+        private void geoIpBtn_Click(object sender, EventArgs e)
+        {
+            WebClient webClient = new WebClient();
+            MessageBox.Show(webClient.DownloadString("http://ip-api.com/line/" + this.targetTextBox.Text) + " ", ProductName);
         }
     }
 }
